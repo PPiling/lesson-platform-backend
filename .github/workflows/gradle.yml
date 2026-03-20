@@ -58,7 +58,7 @@ jobs:
     
           docker run -d -p 8080:8080 \
             --name lesson-server \
-            -e DB_SERVER=${{ secrets.DB_HOST }} \
+            -e DB_HOST=${{ secrets.DB_HOST }} \
             -e TOSS_SECRET_KEY=${{ secrets.PSP_TOSS_SECRET_KEY }} \
             ${{ steps.login-ecr.outputs.registry }}/lesson-platform/server:${{ github.sha }}
     
